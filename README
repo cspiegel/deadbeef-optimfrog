@@ -1,0 +1,31 @@
+This is an OptimFROG plugin for the Deadbeef media player.
+
+To build, the OptimFROG SDK (http://www.losslessaudio.org/SDK.php) is
+required.  Only version 1.500 (corresponding to OptimFROG 5.003) and
+later are supported.  In addition, for vendors who create separate
+development versions of packages, the development version of deadbeef
+is required; this will likely be called something like deadbeef-dev or
+deadbeef-devel.
+
+GNU make is required, as is a C++ compiler that supports C++11.  Recent
+versions of GCC and Clang are both supported.  Other C++11 compilers
+should work, too, but may require the tweaking of compiler.mk.
+
+Once dependencies are installed, build as follows:
+
+$ make
+
+This also assumes that Deadbeef is installed in /usr.  To specify a
+different location, specify it with PREFIX:
+
+$ make PREFIX=/usr/local
+
+To install:
+
+$ make install
+
+This installs the plugin into Deadbeef's input plugin directory; as
+above, if Deadbeef is not in /usr, PREFIX can be used to select its
+location.  To install to a staging area, such as for packaging:
+
+$ make install DESTDIR=/path/to/staging

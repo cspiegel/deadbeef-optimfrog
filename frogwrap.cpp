@@ -70,7 +70,9 @@ FrogWrap::FrogWrap(const char *uri)
   OptimFROG_getTags(decoder, &ofr_tags);
   for(uInt32_t i = 0; i < ofr_tags.keyCount; i++)
   {
-    tags.insert(std::pair<std::string, std::string>(ofr_tags.keys[i], ofr_tags.values[i]));
+    std::string key = ofr_tags.keys[i];
+    std::string value = ofr_tags.values[i];
+    tags.insert(std::pair<std::string, std::string>(key, value));
   }
   OptimFROG_freeTags(&ofr_tags);
 }
